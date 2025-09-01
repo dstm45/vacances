@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Vacances API
+  version: v1
+  description: Vacances est une API pour éditeur de note en Markdown
+paths:
+  /note:
+    get:
+      description: Récupère la note sur le serveur
+      parameters:
+        - name: uuid
+          in: query
+          description: Identifiant publique de la note
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Note recupérée avec succès
+          content:
+            application/json:
+              schema:
+                type: string
